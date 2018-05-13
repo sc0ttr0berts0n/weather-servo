@@ -1,0 +1,16 @@
+{
+    "name": "dark-sky-weather-retriever",
+    "version": "1.0.0",
+    "description": "basic personal use weather api",
+    "main": "darksky.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node darksky"
+    },
+    "author": "Scott Robertson",
+    "license": "MIT",
+    "dependencies": {
+        "dark-sky": "^1.1.4",
+        "express": "^4.16.3"
+    }
+}
