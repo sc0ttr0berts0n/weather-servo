@@ -39,7 +39,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/ds', function(req, res) {
-    if (req.query.key === process.env.SECRET_KEY) {
+    if (
+        req.query.key === process.env.SECRET_KEY &&
+        req.query.key !== undefined
+    ) {
         darksky
             .options({
                 latitude: process.env.LAT,
@@ -55,6 +58,4 @@ app.get('/ds', function(req, res) {
     } else {
         res.send('Bad Key');
     }
-    console.log(req.query.key);
-    console.log(process.env.SECRET_KEY);
 });
