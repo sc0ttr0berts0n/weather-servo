@@ -41,12 +41,14 @@ void loop()
 
         HTTPClient http;
 
+        Serial.println("Requesting Weather...");
         http.begin("https://weather-servo.herokuapp.com/ds?key=" + String(SECRET_KEY)); //Specify the URL
         int httpCode = http.GET();                                                      //Make the request
 
         if (httpCode > 0)
         { //Check for the returning code
-
+            Serial.println("Weather Data Received...");
+            Serial.println("Current Weather is:");
             String payload = http.getString();
             Serial.println(payload);
 
